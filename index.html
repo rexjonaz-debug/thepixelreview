@@ -1,20 +1,581 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CPA Landing Platform</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional content platform for US market. Create, manage, and track landing pages with advanced analytics.">
+    <meta name="keywords" content="landing page, content platform, marketing, analytics">
+    <meta property="og:title" content="Content Hub Platform">
+    <meta property="og:description" content="Professional landing page platform">
+    <meta property="og:type" content="website">
     <meta name="msvalidate.01" content="E4131C93728A9ACA381CBCF7B877CC0B" />
-    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect fill='%23667eea' width='1200' height='630'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold' font-family='Arial'%3E{title}%3C/text%3E%3C/svg%3E">
-<meta property="og:url" content="{CONFIG['DOMAIN']}/landings/{landing_id}.html">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{title}">
-<meta name="twitter:description" content="{description}">
-<meta name="article:published_time" content="{datetime.now().isoformat()}">
-<meta name="author" content="Community">
+    <title>Content Hub - Professional Landing Pages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --text: #2c3e50;
+            --light: #f5f7fa;
+            --border: #e1e8ed;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: #fff;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 14px;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            background: white;
+            color: var(--primary);
+            padding: 14px 40px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .features {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 10px;
+            background: var(--light);
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .stats {
+            background: var(--light);
+            padding: 60px 20px;
+            margin: 80px 0;
+        }
+        
+        .stats-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .how-it-works {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 10px;
+        }
+        
+        .step p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section a {
+            display: block;
+            color: #bbb;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 20px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .cookie-banner.show {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .cookie-text a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .cookie-accept, .cookie-reject {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .cookie-accept {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .cookie-accept:hover {
+            background: var(--secondary);
+        }
+        
+        .cookie-reject {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        
+        .cookie-reject:hover {
+            background: var(--light);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .nav-links { display: none; }
+            .cookie-content { flex-direction: column; align-items: flex-start; }
+            .cookie-buttons { width: 100%; }
+            .cookie-accept, .cookie-reject { flex: 1; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to CPA Landings</h1>
-    <p>Landings are generated automatically.</p>
+    <header>
+        <div class="header-content">
+            <div class="logo">🚀 Content Hub</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Create Professional Landing Pages in Minutes</h1>
+            <p>Powerful platform for content creators. Build, manage, and track landing pages with advanced indexing and analytics.</p>
+            <button class="cta-button" onclick="document.querySelector('.cookie-banner').classList.add('show')">Get Started Free</button>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <h2>Powerful Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Pages load in milliseconds. Optimized for speed and performance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>SEO Optimized</h3>
+                <p>Automatic indexing in Google, Bing, and Yandex. Rank faster.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Advanced Analytics</h3>
+                <p>Track clicks, conversions, and user behavior in real-time.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure & Compliant</h3>
+                <p>GDPR and CCPA compliant. Your data is always protected.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Responsive</h3>
+                <p>Perfect on all devices. Desktop, tablet, and mobile.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Instant Deployment</h3>
+                <p>Deploy in seconds. No coding required.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="stats-content">
+            <div class="stat">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Active Pages</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10M+</div>
+                <div class="stat-label">Monthly Visitors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2.5s</div>
+                <div class="stat-label">Avg Load Time</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works" id="how">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Create</h3>
+                <p>Set up your landing page in minutes.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Customize</h3>
+                <p>Add your content, colors, and branding.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Deploy</h3>
+                <p>Publish instantly with automatic SEO.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Analyze</h3>
+                <p>Track performance in real-time.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Product</h4>
+                <a href="#features">Features</a>
+                <a href="#how">How It Works</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="https://raw.githubusercontent.com/rexjonaz-debug/thepixelreview/main/POLICIES.md#privacy-policy">Privacy Policy</a>
+                <a href="https://raw.githubusercontent.com/rexjonaz-debug/thepixelreview/main/POLICIES.md#cookie-policy">Cookie Policy</a>
+                <a href="https://raw.githubusercontent.com/rexjonaz-debug/thepixelreview/main/POLICIES.md#terms-of-service">Terms of Service</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="#about">About Us</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Content Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                We use cookies to enhance your experience. By continuing to browse, you agree to our <a href="https://raw.githubusercontent.com/rexjonaz-debug/thepixelreview/main/POLICIES.md#privacy-policy">Privacy Policy</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-reject" onclick="rejectCookies()">Reject</button>
+                <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        class CookieManager {
+            constructor() {
+                this.cookieName = 'content_hub_cookies';
+                this.init();
+            }
+            
+            init() {
+                if (!this.getCookie(this.cookieName)) {
+                    setTimeout(() => {
+                        document.getElementById('cookieBanner').classList.add('show');
+                    }, 1000);
+                }
+            }
+            
+            setCookie(name, value, days = 365) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                const expires = "expires=" + date.toUTCString();
+                document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Strict;Secure";
+            }
+            
+            getCookie(name) {
+                const nameEQ = name + "=";
+                const cookies = document.cookie.split(';');
+                for (let cookie of cookies) {
+                    cookie = cookie.trim();
+                    if (cookie.indexOf(nameEQ) === 0) {
+                        return cookie.substring(nameEQ.length);
+                    }
+                }
+                return null;
+            }
+            
+            acceptAllCookies() {
+                const preferences = {
+                    essential: true,
+                    analytical: true,
+                    timestamp: new Date().toISOString()
+                };
+                this.setCookie(this.cookieName, JSON.stringify(preferences), 365);
+                this.hideBanner();
+            }
+            
+            rejectAllCookies() {
+                const preferences = {
+                    essential: true,
+                    analytical: false,
+                    timestamp: new Date().toISOString()
+                };
+                this.setCookie(this.cookieName, JSON.stringify(preferences), 365);
+                this.hideBanner();
+            }
+            
+            hideBanner() {
+                const banner = document.getElementById('cookieBanner');
+                banner.classList.remove('show');
+            }
+        }
+        
+        const cookieManager = new CookieManager();
+        
+        function acceptCookies() {
+            cookieManager.acceptAllCookies();
+        }
+        
+        function rejectCookies() {
+            cookieManager.rejectAllCookies();
+        }
+    </script>
 </body>
 </html>
