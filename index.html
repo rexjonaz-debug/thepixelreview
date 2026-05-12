@@ -3,333 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mylead-verification" content="7269cd0d4eff33ea73d355bd35f9e444">
-    <meta name="description" content="Professional content platform for US market. Create, manage, and track landing pages with advanced analytics.">
-    <meta name="keywords" content="landing page, content platform, marketing, analytics">
-    <meta property="og:title" content="Content Hub Platform">
-    <meta property="og:description" content="Professional landing page platform">
-    <meta property="og:type" content="website">
-    <meta name="msvalidate.01" content="E4131C93728A9ACA381CBCF7B877CC0B" />
-    <title>Content Hub - Professional Landing Pages</title>
+    <meta name="description" content="TechDrop Insider - Breaking news, technology trends, AI, blockchain, crypto, and digital innovation. Latest stories from USA and worldwide.">
+    <meta name="keywords" content="breaking news, technology news, AI news, crypto news, blockchain, tech trends, USA news, digital innovation">
+    <title>TechDrop Insider | Breaking Tech News & Innovation Stories</title>
+    <link rel="canonical" href="https://techdropinsider.com/">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
             --primary: #667eea;
             --secondary: #764ba2;
-            --text: #2c3e50;
-            --light: #f5f7fa;
-            --border: #e1e8ed;
+            --danger: #d62828;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
         }
+        
+        html { font-size: 16px; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: var(--text);
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background: #fff;
+            color: #333;
+            line-height: 1.6;
         }
         
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-            font-size: 14px;
-        }
-        
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-        
-        .cta-button {
-            background: white;
-            color: var(--primary);
-            padding: 14px 40px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 16px;
-            transition: transform 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .features {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-        
-        .features h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 60px;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-        
-        .feature-card {
-            padding: 30px;
-            border-radius: 10px;
-            background: var(--light);
-            border: 1px solid var(--border);
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .feature-card p {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .stats {
-            background: var(--light);
-            padding: 60px 20px;
-            margin: 80px 0;
-        }
-        
-        .stats-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .stat-label {
-            color: #666;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        
-        .how-it-works {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-        
-        .how-it-works h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 60px;
-        }
-        
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-        
-        .step {
-            text-align: center;
-        }
-        
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        
-        .step h3 {
-            margin-bottom: 10px;
-        }
-        
-        .step p {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        footer {
-            background: var(--text);
-            color: white;
-            padding: 40px 20px;
-            margin-top: 80px;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section h4 {
-            margin-bottom: 15px;
-        }
-        
-        .footer-section a {
-            display: block;
-            color: #bbb;
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 12px;
-            color: #999;
-        }
-        
+        /* GDPR Cookie Banner */
         .cookie-banner {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: white;
-            border-top: 1px solid var(--border);
+            background: rgba(0,0,0,0.95);
+            color: white;
             padding: 20px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            display: none;
-        }
-        
-        .cookie-banner.show {
-            display: block;
-            animation: slideUp 0.3s ease;
-        }
-        
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-        
-        .cookie-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            z-index: 9999;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 20px;
-        }
-        
-        .cookie-text {
-            flex: 1;
             font-size: 14px;
-            color: #666;
         }
         
-        .cookie-text a {
-            color: var(--primary);
-            text-decoration: none;
-        }
+        .cookie-text { flex: 1; }
         
         .cookie-buttons {
             display: flex;
             gap: 10px;
         }
         
-        .cookie-accept, .cookie-reject {
+        .cookie-btn {
             padding: 10px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 14px;
             transition: all 0.3s;
         }
         
@@ -344,239 +71,571 @@
         
         .cookie-reject {
             background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text);
+            color: white;
+            border: 1px solid white;
         }
         
         .cookie-reject:hover {
-            background: var(--light);
+            background: rgba(255,255,255,0.1);
         }
         
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .nav-links { display: none; }
-            .cookie-content { flex-direction: column; align-items: flex-start; }
-            .cookie-buttons { width: 100%; }
-            .cookie-accept, .cookie-reject { flex: 1; }
+        /* HEADER */
+        header {
+            background: white;
+            border-bottom: 3px solid var(--primary);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .logo span {
+            color: var(--danger);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover {
+            color: var(--primary);
+        }
+        
+        /* HERO BREAKING NEWS */
+        .breaking-hero {
+            background: linear-gradient(135deg, var(--danger) 0%, #ff6b35 100%);
+            color: white;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .breaking-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .breaking-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .breaking-title {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .breaking-desc {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+        
+        .breaking-meta {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+        
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        /* ARTICLES GRID */
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .article-emoji {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .article-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+        
+        .article-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+        
+        .article-excerpt {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            flex: 1;
+            line-height: 1.6;
+        }
+        
+        .article-meta {
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+        
+        /* SIDEBAR */
+        .sidebar {
+            position: relative;
+        }
+        
+        .sidebar-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .trending-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .trending-item:hover {
+            background: #f9f9f9;
+            margin-left: -10px;
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+        
+        .trending-number {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--primary);
+            min-width: 30px;
+        }
+        
+        .trending-text h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+        
+        .trending-views {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        /* NEWSLETTER */
+        .newsletter-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .newsletter-box h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .newsletter-box p {
+            font-size: 13px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .newsletter-btn {
+            width: 100%;
+            padding: 12px;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* ADS PLACEHOLDER */
+        .ad-space {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .footer-col a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #999;
+        }
+        
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+            
+            .breaking-title {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">🚀 Content Hub</div>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how">How It Works</a></li>
-                <li><a href="#privacy">Privacy</a></li>
-            </ul>
-        </div>
-    </header>
-    
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Create Professional Landing Pages in Minutes</h1>
-            <p>Powerful platform for content creators. Build, manage, and track landing pages with advanced indexing and analytics.</p>
-            <button class="cta-button" onclick="document.querySelector('.cookie-banner').classList.add('show')">Get Started Free</button>
-        </div>
-    </section>
-    
-    <section class="features" id="features">
-        <h2>Powerful Features</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Lightning Fast</h3>
-                <p>Pages load in milliseconds. Optimized for speed and performance.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>SEO Optimized</h3>
-                <p>Automatic indexing in Google, Bing, and Yandex. Rank faster.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Advanced Analytics</h3>
-                <p>Track clicks, conversions, and user behavior in real-time.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Secure & Compliant</h3>
-                <p>GDPR and CCPA compliant. Your data is always protected.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Mobile Responsive</h3>
-                <p>Perfect on all devices. Desktop, tablet, and mobile.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Instant Deployment</h3>
-                <p>Deploy in seconds. No coding required.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="stats">
-        <div class="stats-content">
-            <div class="stat">
-                <div class="stat-number">50K+</div>
-                <div class="stat-label">Active Pages</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">10M+</div>
-                <div class="stat-label">Monthly Visitors</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">99.9%</div>
-                <div class="stat-label">Uptime</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">2.5s</div>
-                <div class="stat-label">Avg Load Time</div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="how-it-works" id="how">
-        <h2>How It Works</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Create</h3>
-                <p>Set up your landing page in minutes.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Customize</h3>
-                <p>Add your content, colors, and branding.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Deploy</h3>
-                <p>Publish instantly with automatic SEO.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Analyze</h3>
-                <p>Track performance in real-time.</p>
-            </div>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Product</h4>
-                <a href="#features">Features</a>
-                <a href="#how">How It Works</a>
-                <a href="#pricing">Pricing</a>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <a href="https://raw.githubusercontent.com/rexjonaz-debug/thepixelreview/main/POLICIES.md#privacy-policy">Privacy Policy</a>
-                <a href="https://raw.githubusercontent.com/rexjonaz-debug/thepixelreview/main/POLICIES.md#cookie-policy">Cookie Policy</a>
-                <a href="https://raw.githubusercontent.com/rexjonaz-debug/thepixelreview/main/POLICIES.md#terms-of-service">Terms of Service</a>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <a href="#about">About Us</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Facebook</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Content Hub. All rights reserved.</p>
-        </div>
-    </footer>
-    
+    <!-- GDPR COOKIE BANNER -->
     <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                We use cookies to enhance your experience. By continuing to browse, you agree to our <a href="https://raw.githubusercontent.com/rexjonaz-debug/thepixelreview/main/POLICIES.md#privacy-policy">Privacy Policy</a>.
-            </div>
-            <div class="cookie-buttons">
-                <button class="cookie-reject" onclick="rejectCookies()">Reject</button>
-                <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
-            </div>
+        <div class="cookie-text">
+            <strong>🍪 Cookie Preferences</strong><br>
+            We use essential cookies for functionality and analytics. Click accept to enable personalized ads and better experience.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Reject</button>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept All</button>
         </div>
     </div>
     
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">TechDrop <span>Insider</span></div>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="#trending">Trending</a>
+                <a href="#latest">Latest</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- BREAKING NEWS HERO -->
+    <section class="breaking-hero">
+        <div class="breaking-content">
+            <div class="breaking-badge">⚡ BREAKING NEWS</div>
+            <h1 class="breaking-title">CIA Declassified UFO Files 2026</h1>
+            <p class="breaking-desc">Pentagon releases 70 years of classified documentation. Official sources confirm authenticity.</p>
+            <div class="breaking-meta">Published 2 hours ago • 2.3K reads</div>
+        </div>
+    </section>
+    
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <main>
+            <div class="articles" id="articlesGrid"></div>
+        </main>
+        
+        <aside class="sidebar">
+            <div class="ad-space">📢 Advertisement Space</div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">🔥 Trending Now</div>
+                <div class="trending-item">
+                    <div class="trending-number">1</div>
+                    <div class="trending-text">
+                        <h4>CIA Declassified UFO Files</h4>
+                        <div class="trending-views">2.3K reads</div>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-number">2</div>
+                    <div class="trending-text">
+                        <h4>Best AI Tools for Business</h4>
+                        <div class="trending-views">1.8K reads</div>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-number">3</div>
+                    <div class="trending-text">
+                        <h4>Make Money With AI</h4>
+                        <div class="trending-views">1.5K reads</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="newsletter-box">
+                <h3>Stay Updated</h3>
+                <p>Get breaking tech news daily</p>
+                <input type="email" placeholder="your@email.com">
+                <button class="newsletter-btn">Subscribe</button>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TechDrop Insider. Breaking Tech News & Innovation Stories.
+        </div>
+    </footer>
+    
     <script>
-        class CookieManager {
-            constructor() {
-                this.cookieName = 'content_hub_cookies';
-                this.init();
+        const articles = [
+            {
+                title: "CIA Declassified UFO Files 2026",
+                excerpt: "Pentagon releases 70 years of classified UFO documentation...",
+                category: "Breaking News",
+                emoji: "🛸",
+                url: "/blogs/cia-declassified-ufo-files-2026/",
+                views: "2.3K"
+            },
+            {
+                title: "Best AI Tools for Business 2026",
+                excerpt: "ChatGPT vs Claude vs 13+ others tested. Complete ranking...",
+                category: "AI & Technology",
+                emoji: "🤖",
+                url: "/blogs/best-ai-tools-2026-complete-guide/",
+                views: "1.8K"
+            },
+            {
+                title: "How to Make Money With AI",
+                excerpt: "8 real methods making $500-$5000/month...",
+                category: "Making Money",
+                emoji: "💰",
+                url: "/blogs/how-to-make-money-ai-2026/",
+                views: "1.5K"
+            },
+            {
+                title: "What's Next in Tech 2026",
+                excerpt: "10 tech innovations that will reshape everything...",
+                category: "Technology Trends",
+                emoji: "🚀",
+                url: "/blogs/whats-next-in-tech-2026/",
+                views: "1.2K"
+            },
+            {
+                title: "Blockchain Explained",
+                excerpt: "Finally understand blockchain. No jargon, real examples...",
+                category: "Crypto",
+                emoji: "⛓️",
+                url: "/blogs/blockchain-explained-simple-guide/",
+                views: "987"
             }
-            
-            init() {
-                if (!this.getCookie(this.cookieName)) {
-                    setTimeout(() => {
-                        document.getElementById('cookieBanner').classList.add('show');
-                    }, 1000);
-                }
-            }
-            
-            setCookie(name, value, days = 365) {
-                const date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                const expires = "expires=" + date.toUTCString();
-                document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Strict;Secure";
-            }
-            
-            getCookie(name) {
-                const nameEQ = name + "=";
-                const cookies = document.cookie.split(';');
-                for (let cookie of cookies) {
-                    cookie = cookie.trim();
-                    if (cookie.indexOf(nameEQ) === 0) {
-                        return cookie.substring(nameEQ.length);
-                    }
-                }
-                return null;
-            }
-            
-            acceptAllCookies() {
-                const preferences = {
-                    essential: true,
-                    analytical: true,
-                    timestamp: new Date().toISOString()
-                };
-                this.setCookie(this.cookieName, JSON.stringify(preferences), 365);
-                this.hideBanner();
-            }
-            
-            rejectAllCookies() {
-                const preferences = {
-                    essential: true,
-                    analytical: false,
-                    timestamp: new Date().toISOString()
-                };
-                this.setCookie(this.cookieName, JSON.stringify(preferences), 365);
-                this.hideBanner();
-            }
-            
-            hideBanner() {
-                const banner = document.getElementById('cookieBanner');
-                banner.classList.remove('show');
-            }
+        ];
+        
+        function populateArticles() {
+            const grid = document.getElementById('articlesGrid');
+            articles.forEach(article => {
+                const card = document.createElement('a');
+                card.href = article.url;
+                card.className = 'article-card';
+                card.innerHTML = `
+                    <div class="article-image"><div class="article-emoji">${article.emoji}</div></div>
+                    <div class="article-content">
+                        <div class="article-category">${article.category}</div>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-meta">${article.views} reads</div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
         }
         
-        const cookieManager = new CookieManager();
-        
         function acceptCookies() {
-            cookieManager.acceptAllCookies();
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').style.display = 'none';
         }
         
         function rejectCookies() {
-            cookieManager.rejectAllCookies();
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookieBanner').style.display = 'none';
         }
+        
+        if (localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+        
+        populateArticles();
     </script>
 </body>
 </html>
